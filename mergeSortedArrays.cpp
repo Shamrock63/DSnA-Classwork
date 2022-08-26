@@ -3,27 +3,20 @@
 
 using namespace std;
 
-//I am aware of the sort() function, but I was only made aware after researching my problems. Since using that would mean my solution would devolve to copying someone else, I wanted to see if I could make my own O(n) solution for merging two sorted arrays.
-//That said, if the instructor pops the "what if they're not sorted" question during answer review, I'm gonna flip.
+// I am aware of the sort() function, but I was only made aware after researching my problems. Since using that would mean my solution would devolve to copying someone else, I wanted to see if I could make my own O(n) solution for merging two sorted arrays.
+// That said, if the instructor pops the "what if they're not sorted" question during answer review, I'm gonna flip.
 
 void mergeSortedArrays(int arr1[], int arr2[], int arr3[], int arr1Size, int arr2Size) {
   int i = 0, j = 0;
-//  cout << arr1Size+arr2Size << "\n";
   while(i+j < arr1Size+arr2Size) {
-//    cout << "i: " << i << "  j: " << j << "\n";
+    // If arr1[i] is valid AND (arr1 is less than arr2 OR arr2[j] is invalid)
     if((arr1[i] < arr2[j] || j == arr2Size) && i != arr1Size) {
-//      cout << "add arr1\n";
       arr3[i+j] = arr1[i];
-//      cout << "arr3: " << arr3[i+j] << "\n\n";
       i++;
     } else {
-//      cout << "add arr2\n";
       arr3[i+j] = arr2[j];
-//      cout << "arr3: " << arr3[i+j] << "\n\n";
       j++;
-    }
-  }
-}
+} } }
 
 int main(void) {
   // expected result: { 0, 3, 4, 4, 6, 30, 31 }
